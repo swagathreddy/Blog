@@ -1,0 +1,28 @@
+
+<div class="author_info">
+    <h1 class="author_heading">Hi,I am Swagath Reddy</h1>
+    <p class="author_body">Full Stack Web Developer</p>
+</div>
+<img src="/img/hero-image.png" alt="person picture" class="author_image" >
+
+<section class="articles">
+    <h2 class="articles_heading">Latest Posts</h2>
+
+    <ul class="article-ul">
+        <% if(data && Array.isArray(data) && data.length>0){ %>
+        <% data.forEach(post=>{ %>
+            <li>
+                <a href="/post/<%=post._id %>">
+                    <span><%= post.title %></span>
+                    <span class="articles-list_date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+        <% }else{ %>
+            <li>No posts yet.</li>
+            <% } %>
+    </ul>
+    <% if(nextpage!==null){ %>
+        <a href="/?page=<%= nextpage %> "class="pagination">&lt; View older posts</a>
+        <% } %> 
+</section>

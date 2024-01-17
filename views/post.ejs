@@ -1,0 +1,12 @@
+
+
+<h2><%=data.title  %></h2>
+<article class="article">
+  <%= data.body %>
+
+</article>
+<div class="link">
+  <% if(data.link){ %>
+  <a href="<%- data.link  %>" target="_blank">Check out more about this..</a>
+  <% } %>
+</div>

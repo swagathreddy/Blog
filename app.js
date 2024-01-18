@@ -3,6 +3,7 @@ const express= require('express');
 const expressLayouts =require("express-ejs-layouts");
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const path=require("path");
 const connectDB=require("./server/config/db");
 const app=express();
 const PORT= process.env.PORT  || 7595;
@@ -16,6 +17,7 @@ app.use(express.static("public"));
 //templating  engine
 app.use(expressLayouts);
 app.set("layout","./layouts/main");
+app.set('views', path.join(__dirname, 'views'));
 app.set("view engine","ejs");
 app.use('/',require('./server/routes/main'));
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const connectDB=require("./server/config/db");
 const app=express();
-const PORT= process.env.PORT || 3000 ;
+const PORT= process.env.PORT;
 
 
 connectDB();

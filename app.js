@@ -21,6 +21,10 @@ app.use('/',require('./server/routes/main'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+    res.render('index');
+  });
+
 app.post('/send', (req, res) => {
     const { name, email, message } = req.body;
 

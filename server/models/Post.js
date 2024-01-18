@@ -14,6 +14,9 @@ const PostSchema=new Schema({
     link:{
         type:String
     },
+    link1:{
+        type:String
+    },
     createdAt:{
         type:Date,
         default:Date.now
